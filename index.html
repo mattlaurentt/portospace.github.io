@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTO SPACE | Space Logistics & Orbital Transportation</title>
-    
+    <meta name="description" content="PORTO SPACE operates as the final link in the orbital supply chain — delivering payloads to precise addresses in orbit.">
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons Link -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Fonts -->
@@ -17,256 +18,323 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Custom JS -->
     <script src="main.js" defer></script>
-    
+
     <!-- Vercel Web Analytics -->
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 
-    <!-- Overlays -->
+    <!-- Scanline texture overlay -->
     <div class="scanline-overlay" aria-hidden="true"></div>
 
-    <!-- 1. NAVIGATION -->
-    <nav class="custom-navbar">
-        <a href="index.html" class="logo">PORTO SPACE</a>
+    <!-- ─── 1. NAVIGATION ─────────────────────────────────────── -->
+    <nav class="custom-navbar" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo" aria-label="PORTO SPACE — Home">PORTO SPACE</a>
 
-        <input type="checkbox" id="menu-toggle">
+        <input type="checkbox" id="menu-toggle" aria-hidden="true">
         <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
         </label>
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="fleet.html">Fleet</a>
-            <a href="contact.html">Contact</a>
+        <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem" class="nav-active">Home</a>
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="fleet.html" role="menuitem">Fleet</a>
+            <a href="contact.html" role="menuitem">Contact</a>
         </div>
     </nav>
 
-    <!-- 2. HERO -->
-    <header class="hero">
-        <video autoplay loop muted playsinline preload="metadata" poster="assets/bg/index-bg-poster.webp" class="hero-video">
+    <!-- ─── 2. HERO ───────────────────────────────────────────── -->
+    <header class="hero" role="banner">
+        <video autoplay loop muted playsinline preload="metadata"
+               poster="assets/bg/index-bg-poster.webp" class="hero-video"
+               aria-hidden="true">
             <source src="assets/bg/index-bg.webm" type="video/webm">
-            Your browser does not support HTML5 video.
         </video>
-        <div class="hero-overlay"></div>
-        <div class="container-fluid px-4 px-md-5">
-            <div class="row">
-                <div class="col-xl-10">
-                    <h1 class="hero-title">SPACE LOGISTICS AND ORBITAL TRANSPORTATION</h1>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="hero-tag">Space Logistics</span>
+                <span class="hero-tag">Orbital Transportation</span>
+                <span class="hero-tag">Last-Mile Delivery</span>
+            </div>
+            <h1 class="hero-title">SPACE<br>LOGISTICS<br><em>&amp; ORBITAL</em><br>TRANSPORT</h1>
+            <div class="hero-bottom-bar">
+                <p class="hero-sub">Precision delivery to any orbital address — from LEO to GEO and beyond.</p>
+                <div class="hero-cta-group">
+                    <a href="services.html" class="btn-hero-primary">Our Services</a>
+                    <a href="contact.html" class="btn-hero-ghost">Request a Mission</a>
                 </div>
             </div>
+        </div>
+
+        <div class="hero-scroll-indicator" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
     <main>
-        <!-- 3. PARTNERS MARQUEE -->
-        <section class="marquee-section">
-            <div class="container px-4 px-md-5">
-                <p class="label-text marquee-label">Partners &amp; collaborators</p>
-                <div class="marquee-track">
-                    <div class="marquee-inner">
-                        <!-- SET A -->
-                        <div class="marquee-item"><img src="assets/logo/logo-ipsum-1.svg" alt="Partner"></div>
-                        <div class="marquee-item"><img src="assets/logo/logo-ipsum-2.svg" alt="Partner"></div>
-                        <div class="marquee-item"><img src="assets/logo/logo-ipsum-3.svg" alt="Partner"></div>
-                        <div class="marquee-item"><img src="assets/logo/logo-ipsum-4.svg" alt="Partner"></div>
-                        <div class="marquee-item"><img src="assets/logo/logo-ipsum-5.svg" alt="Partner"></div> 
-                        <!-- SET B (Duplicate for seamless loop) -->
-                        <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-1.svg" alt="Partner"></div>
-                        <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-2.svg" alt="Partner"></div>
-                        <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-3.svg" alt="Partner"></div>
-                        <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-4.svg" alt="Partner"></div>
-                        <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-5.svg" alt="Partner"></div>
-                    </div>
+
+        <!-- ─── 3. TICKER / MARQUEE ─────────────────────────────── -->
+        <section class="marquee-section" aria-label="Partners and collaborators">
+            <div class="marquee-header">
+                <span class="label-text">Partners &amp; Collaborators</span>
+            </div>
+            <div class="marquee-track" role="list">
+                <div class="marquee-inner">
+                    <!-- Set A -->
+                    <div class="marquee-item" role="listitem"><img src="assets/logo/logo-ipsum-1.svg" alt="Partner logo" height="36"></div>
+                    <div class="marquee-item" role="listitem"><img src="assets/logo/logo-ipsum-2.svg" alt="Partner logo" height="36"></div>
+                    <div class="marquee-item" role="listitem"><img src="assets/logo/logo-ipsum-3.svg" alt="Partner logo" height="36"></div>
+                    <div class="marquee-item" role="listitem"><img src="assets/logo/logo-ipsum-4.svg" alt="Partner logo" height="36"></div>
+                    <div class="marquee-item" role="listitem"><img src="assets/logo/logo-ipsum-5.svg" alt="Partner logo" height="36"></div>
+                    <!-- Set B (duplicate for seamless loop) -->
+                    <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-1.svg" alt="" height="36"></div>
+                    <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-2.svg" alt="" height="36"></div>
+                    <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-3.svg" alt="" height="36"></div>
+                    <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-4.svg" alt="" height="36"></div>
+                    <div class="marquee-item" aria-hidden="true"><img src="assets/logo/logo-ipsum-5.svg" alt="" height="36"></div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. IMPACT DASHBOARD -->
-        <section id="impact" class="section-padding border-top-thin">
+        <!-- ─── 4. IMPACT METRICS ────────────────────────────────── -->
+        <section id="impact" class="section-impact section-padding" aria-labelledby="impact-heading">
             <div class="container px-4 px-md-5">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-5">
-                        <span class="label-text d-block mb-4">01 // The Impact</span>
-                        <h2 class="mb-4">Driving the <br>Orbital Economy</h2>
+                <div class="impact-header">
+                    <span class="label-text">01 // The Impact</span>
+                    <h2 id="impact-heading">Driving the<br>Orbital Economy</h2>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value counter" data-target="22" aria-label="22">0</span>
+                        <span class="metric-label">Successful Missions</span>
+                        <div class="metric-bar" style="--fill: 22%"></div>
                     </div>
-                    <div class="col-lg-7">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="metric-card">
-                                    <span class="metric-value counter" data-target="22">0</span>
-                                    <span class="label-text">Successful Missions</span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="metric-card">
-                                    <span class="metric-value counter" data-target="79">0</span>
-                                    <span class="label-text">Hosted Payloads</span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="metric-card">
-                                    <span class="metric-value counter" data-target="141">0</span>
-                                    <span class="label-text">Satellites Deployed</span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="metric-card">
-                                    <span class="metric-value">06/2026</span>
-                                    <span class="label-text">Next Launch</span>
-                                </div>
-                            </div>
+                    <div class="metric-card">
+                        <span class="metric-value counter" data-target="79" aria-label="79">0</span>
+                        <span class="metric-label">Hosted Payloads</span>
+                        <div class="metric-bar" style="--fill: 79%"></div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value counter" data-target="141" aria-label="141">0</span>
+                        <span class="metric-label">Satellites Deployed</span>
+                        <div class="metric-bar" style="--fill: 94%"></div>
+                    </div>
+                    <div class="metric-card metric-card--highlight">
+                        <span class="metric-value">06/2026</span>
+                        <span class="metric-label">Next Launch</span>
+                        <div class="metric-status">
+                            <span class="status-dot"></span>
+                            <span>On Schedule</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. ABOUT SUMMARY -->
-        <section id="about" class="section-padding border-top-thin">
+        <!-- ─── 5. ABOUT TEASER ──────────────────────────────────── -->
+        <section id="about" class="section-about section-padding" aria-labelledby="about-heading">
             <div class="container px-4 px-md-5">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <span class="label-text d-block mb-4">02 // The Architecture</span>
-                        <h2 class="mb-4">THE LAST MILE OF YOUR MISSION</h2>
-                        <p class="muted-text mb-5">
-                            PORTO SPACE operates as the final link in the orbital supply chain. Our transfer vehicles picks up payloads at generic drop-off points and delivers them to your precise addresses.
+                <div class="about-grid">
+                    <div class="about-label-col">
+                        <span class="label-text">02 // The Architecture</span>
+                        <div class="about-number" aria-hidden="true">02</div>
+                    </div>
+                    <div class="about-content-col">
+                        <h2 id="about-heading">THE LAST MILE<br>OF YOUR MISSION</h2>
+                        <p class="muted-text about-body">
+                            PORTO SPACE operates as the final link in the orbital supply chain.
+                            Our transfer vehicles pick up payloads at generic drop-off points
+                            and deliver them to your precise addresses in orbit — with millimetre
+                            accuracy and zero schedule slip.
                         </p>
-                        <a href="about.html" class="btn-sleek">Learn More About Us</a>
+                        <a href="about.html" class="btn-sleek" aria-label="Learn more about PORTO SPACE">Learn More About Us</a>
+                    </div>
+                    <div class="about-visual-col" aria-hidden="true">
+                        <div class="about-orbit-ring">
+                            <div class="orbit-ring orbit-ring--outer"></div>
+                            <div class="orbit-ring orbit-ring--mid"></div>
+                            <div class="orbit-ring orbit-ring--inner"></div>
+                            <div class="orbit-dot"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-       <!-- 6. SERVICES SUMMARY -->
-        <section id="services" class="section-padding border-top-thin">
+        <!-- ─── 6. SERVICES ──────────────────────────────────────── -->
+        <section id="services" class="section-services section-padding" aria-labelledby="services-heading">
             <div class="container px-4 px-md-5">
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+                <div class="services-header">
                     <div>
-                        <span class="label-text d-block mb-3">03 // Core Capabilities</span>
-                        <h2 class="mb-0">Our Services</h2>
+                        <span class="label-text d-block mb-2">03 // Core Capabilities</span>
+                        <h2 id="services-heading" class="mb-0">Our Services</h2>
                     </div>
-                    <a href="services.html" class="btn-sleek mt-4 mt-md-0">View All Services</a>
+                    <a href="services.html" class="btn-sleek" aria-label="View all services">View All Services</a>
                 </div>
 
-                <div class="row g-4">
+                <div class="services-grid">
                     <!-- Card 1 -->
-                    <div class="col-12 col-lg-4">
-                        <div class="glass-panel service-card">
-                            <div class="service-image-container">
-                                <img src="assets/services/services-1.webp" alt="EXACT DELIVERY" loading="lazy">
-                            </div>
-                            <!-- New Wrapper for Padding -->
-                            <div class="service-card-content">
-                                <h4 class="mb-3">EXACT DELIVERY</h4>
-                                <p class="muted-text">Our fleet of orbital vehicles move your satellite from a generic drop-off point to its specific working location in orbit.</p>
-                            </div>
+                    <article class="service-card">
+                        <div class="service-image-wrapper">
+                            <img src="assets/services/services-1.webp" alt="Orbital exact delivery service" loading="lazy">
+                            <div class="service-index" aria-hidden="true">01</div>
                         </div>
-                    </div>
+                        <div class="service-body">
+                            <h3 class="service-title">Exact Delivery</h3>
+                            <p class="service-desc">Our fleet of orbital vehicles move your satellite from a generic drop-off point to its specific working location in orbit.</p>
+                            <a href="services.html" class="service-link" aria-label="Learn more about Exact Delivery">
+                                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
 
                     <!-- Card 2 -->
-                    <div class="col-12 col-lg-4">
-                        <div class="glass-panel service-card">
-                            <div class="service-image-container">
-                                <img src="assets/services/services-2.webp" alt="PART REPLACEMENT" loading="lazy">
-                            </div>
-                            <!-- New Wrapper for Padding -->
-                            <div class="service-card-content">
-                                <h4 class="mb-3">PART REPLACEMENT</h4>
-                                <p class="muted-text">Quickly swap out old or broken hardware in your satellite network to keep your system running without lag.</p>
-                            </div>
+                    <article class="service-card">
+                        <div class="service-image-wrapper">
+                            <img src="assets/services/services-2.webp" alt="Satellite part replacement service" loading="lazy">
+                            <div class="service-index" aria-hidden="true">02</div>
                         </div>
-                    </div>
+                        <div class="service-body">
+                            <h3 class="service-title">Part Replacement</h3>
+                            <p class="service-desc">Quickly swap out old or broken hardware in your satellite network to keep your system running without lag.</p>
+                            <a href="services.html" class="service-link" aria-label="Learn more about Part Replacement">
+                                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
 
                     <!-- Card 3 -->
-                    <div class="col-12 col-lg-4">
-                        <div class="glass-panel service-card">
-                            <div class="service-image-container">
-                                <img src="assets/services/services-3.webp" alt="SAFE REMOVAL" loading="lazy">
-                            </div>
-                            <!-- New Wrapper for Padding -->
-                            <div class="service-card-content">
-                                <h4 class="mb-3">SAFE REMOVAL</h4>
-                                <p class="muted-text">Clear away old equipment at the end of its life, keeping space clean and following all safety rules.</p>
-                            </div>
+                    <article class="service-card">
+                        <div class="service-image-wrapper">
+                            <img src="assets/services/services-3.webp" alt="Safe orbital removal service" loading="lazy">
+                            <div class="service-index" aria-hidden="true">03</div>
                         </div>
-                    </div>
+                        <div class="service-body">
+                            <h3 class="service-title">Safe Removal</h3>
+                            <p class="service-desc">Clear away end-of-life equipment, keeping orbital space clean and compliant with all international safety standards.</p>
+                            <a href="services.html" class="service-link" aria-label="Learn more about Safe Removal">
+                                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- 7. TESTIMONIALS (SEAMLESS STREAM) -->
-        <section id="testimonials" class="section-padding border-top-thin">
+        <!-- ─── 7. TESTIMONIALS ──────────────────────────────────── -->
+        <section id="testimonials" class="section-testimonials section-padding" aria-labelledby="testimonials-heading">
             <div class="container px-4 px-md-5 mb-5">
-                <span class="label-text d-block mb-3">04 // Partner Endorsements</span>
-                <h2>FEEDBACK</h2>
+                <div class="testimonials-header">
+                    <span class="label-text">04 // Partner Endorsements</span>
+                    <h2 id="testimonials-heading">Feedback</h2>
+                </div>
             </div>
-            <div class="testimonial-track">
+
+            <div class="testimonial-track" role="list" aria-label="Partner testimonials">
                 <div class="testimonial-inner">
+                    <!-- Set A -->
+                    <blockquote class="testimonial-card" role="listitem">
+                        <p class="testimonial-text">"Precision insertion saved our constellation 18 months of maneuvering fuel."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Dr. Elias Thorne</cite>
+                            <span class="testimonial-company">AetherLink</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem">
+                        <p class="testimonial-text">"Reliable, exact, and highly communicative. PORTO is our first call for node refreshes."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Sarah Vance</cite>
+                            <span class="testimonial-company">GlobalTel</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem">
+                        <p class="testimonial-text">"Unmatched de-orbiting compliance. Zero regulatory friction on asset disposal."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Marcus Jin</cite>
+                            <span class="testimonial-company">Orbis Systems</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem">
+                        <p class="testimonial-text">"The most reliable last-mile orbital courier we've used in a decade."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Elena Rostova</cite>
+                            <span class="testimonial-company">Apex Defense</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem">
+                        <p class="testimonial-text">"The telemetry data provided during transit was flawlessly accurate."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">James Wu</cite>
+                            <span class="testimonial-company">NimbusSat</span>
+                        </footer>
+                    </blockquote>
+                    <!-- Set B (duplicate for loop) -->
+                    <blockquote class="testimonial-card" role="listitem" aria-hidden="true">
+                        <p class="testimonial-text">"Precision insertion saved our constellation 18 months of maneuvering fuel."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Dr. Elias Thorne</cite>
+                            <span class="testimonial-company">AetherLink</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem" aria-hidden="true">
+                        <p class="testimonial-text">"Reliable, exact, and highly communicative. PORTO is our first call for node refreshes."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Sarah Vance</cite>
+                            <span class="testimonial-company">GlobalTel</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem" aria-hidden="true">
+                        <p class="testimonial-text">"Unmatched de-orbiting compliance. Zero regulatory friction on asset disposal."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Marcus Jin</cite>
+                            <span class="testimonial-company">Orbis Systems</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem" aria-hidden="true">
+                        <p class="testimonial-text">"The most reliable last-mile orbital courier we've used in a decade."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">Elena Rostova</cite>
+                            <span class="testimonial-company">Apex Defense</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card" role="listitem" aria-hidden="true">
+                        <p class="testimonial-text">"The telemetry data provided during transit was flawlessly accurate."</p>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-author">James Wu</cite>
+                            <span class="testimonial-company">NimbusSat</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
 
-                    <!-- ── SET A (5 Unique Items) ── -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Precision insertion saved our constellation 18 months of maneuvering fuel.</p>
-                        <h6 class="testimonial-author">Dr. Elias Thorne</h6>
-                        <span class="testimonial-company">AetherLink</span>
+        <!-- ─── 8. CTA BAND ──────────────────────────────────────── -->
+        <section class="section-cta section-padding" aria-label="Call to action">
+            <div class="container px-4 px-md-5">
+                <div class="cta-band">
+                    <div class="cta-text-col">
+                        <span class="label-text mb-3 d-block">Ready to Launch?</span>
+                        <h2 class="cta-heading">YOUR MISSION.<br>OUR ORBIT.</h2>
                     </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Reliable, exact, and highly communicative. PORTO is our first call for node refreshes.</p>
-                        <h6 class="testimonial-author">Sarah Vance</h6>
-                        <span class="testimonial-company">GlobalTel</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Unmatched de-orbiting compliance. Zero regulatory friction on asset disposal.</p>
-                        <h6 class="testimonial-author">Marcus Jin</h6>
-                        <span class="testimonial-company">Orbis Systems</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">The most reliable last-mile orbital courier we've used in a decade.</p>
-                        <h6 class="testimonial-author">Elena Rostova</h6>
-                        <span class="testimonial-company">Apex Defense</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">The telemetry data provided during transit was flawlessly accurate.</p>
-                        <h6 class="testimonial-author">James Wu</h6>
-                        <span class="testimonial-company">NimbusSat</span>
-                    </div>
-
-                    <!-- ── SET B (Exact Duplicate of Set A) ── -->
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Precision insertion saved our constellation 18 months of maneuvering fuel.</p>
-                        <h6 class="testimonial-author">Dr. Elias Thorne</h6>
-                        <span class="testimonial-company">AetherLink</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Reliable, exact, and highly communicative. PORTO is our first call for node refreshes.</p>
-                        <h6 class="testimonial-author">Sarah Vance</h6>
-                        <span class="testimonial-company">GlobalTel</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">Unmatched de-orbiting compliance. Zero regulatory friction on asset disposal.</p>
-                        <h6 class="testimonial-author">Marcus Jin</h6>
-                        <span class="testimonial-company">Orbis Systems</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">The most reliable last-mile orbital courier we've used in a decade.</p>
-                        <h6 class="testimonial-author">Elena Rostova</h6>
-                        <span class="testimonial-company">Apex Defense</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">The telemetry data provided during transit was flawlessly accurate.</p>
-                        <h6 class="testimonial-author">James Wu</h6>
-                        <span class="testimonial-company">NimbusSat</span>
+                    <div class="cta-action-col">
+                        <p class="muted-text mb-4">Contact our mission planning team to discuss your orbital logistics requirements and receive a custom mission proposal.</p>
+                        <a href="contact.html" class="btn-sleek btn-sleek--filled">Start a Conversation</a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <div id="footer-container"></div>
+
 </body>
 </html>
